@@ -44,7 +44,7 @@ sudo firewall-cmd --reload
 Contoh:
 
 ```bash
-sudo cp -r /path/to/your/blog-app /var/www/html/
+sudo cp -r /path/to/your/blog /var/www/html/
 ```
 
 ### 5. Konfigurasi Virtual Host (Opsional)
@@ -54,7 +54,7 @@ Jika Anda ingin mengakses website Blog menggunakan domain atau subdomain (misaln
 Jalankan:
 
 ```bash
-sudo nano /etc/httpd/conf.d/blogapp.conf
+sudo nano /etc/httpd/conf.d/blog.conf
 ```
 
 Tambahkan konfigurasi berikut:
@@ -62,7 +62,7 @@ Tambahkan konfigurasi berikut:
 ```apache
 <VirtualHost *:80>
     ServerName blog.yourdomain.com   <-- Ubah IP CentOs 9
-    DocumentRoot /var/www/html/blog-app
+    DocumentRoot /var/www/html/blog
 
     <Directory /var/www/html/blog>
         AllowOverride All
@@ -100,7 +100,7 @@ sudo systemctl restart httpd
   
   - Jika menggunakan IP server:
     ```
-    http://your-server-ip/blog
+    http://your-server-ip
     ```
   - Jika menggunakan domain:
     ```
